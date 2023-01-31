@@ -10,6 +10,7 @@
 all: bin bin/main
 
 ENCSRIPT_FLAGS=-C -T 2 -p - -M Letter -Ecpp --color -fCourier8
+ENCSRIPT_FLAGS_TXT=-C -T 2 -p - -M Letter -fCourier8
 VALGRIND_FLAGS=-v --leak-check=yes --track-origins=yes --leak-check=full --show-leak-kinds=all 
 
 #compiler=clang++
@@ -41,6 +42,9 @@ valgrind: bin/main
 
 printAll:
 	enscript ${ENCSRIPT_FLAGS} src/*.cpp include/*.h  | ps2pdf - bin/src.pdf
+
+printAlgo:
+	enscript ${ENCSRIPT_FLAGS_TXT} Algorithm.txt  | ps2pdf - bin/Algo.pdf
 
 runMe: bin/main
 	bin/main
