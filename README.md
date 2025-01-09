@@ -1,17 +1,32 @@
 ## C++ in VS Code on Mac, Windows, Linux
 
-### Make sure your set the platform correctly on the bottom right of the VS Code window.
-
 ## Commands:
-F5: Start Debugging (works)
+* To build a program,
+  * use ctrl-shift-b or command-shift-b to invoke the Makefile.
+  * Or you can use the command palette (F1), type build, then choose run build task
+* To clean, use the command palette (F1), type Run Task, choose clean
+* To run a program, go to the terminal and type bin/main
+* To debug a program, go to the run and debug tab, make sure the lldb is selected, place a breakpoint in the code, and then run
 
-Control-F5: Start without Debugging (works WINDOWS, not working MAC, output shows up in *DEBUG CONSOLE*)
+Frequently, we should do the following from the terminal:
+* git add .
+* git commit -m "message"
+* git push
 
-[Not sure if *Start without Debugging* should work](https://github.com/microsoft/vscode-cpptools/issues/1201)
+At the end of a session, shut down the codespace
+* Go to the command palette (F1) and search for "stop current workspace"
 
-Control-Shift-B: Build (works)
+If you lose a terminal in Codespaces:
+* Go to the command palette (F1) and search for "create new terminal"
 
-Terminal | Run task | clean (works, calls *make clean*)
+## Codespaces
+* Install the C/C++ Extension from Microsoft
+* Install the CodeLLDB from VAdim Chugunov
+* This repository contains a custom container that installs enscript and ghostscript to easily print source code
+* Students can run ```make -f Makefile_linux printAll``` to print the code to bin/src.pdf. 
+* Students can then Right Click on src.pdf and download the PDF locally
+
+### Make sure you set the platform correctly on the bottom right of the VS Code window.
 
 ## Mac: 
 
@@ -58,10 +73,6 @@ Which is the easiest compiler tool chain for students to install/use on Windows?
  * msys
  * ?
 
-## Codespaces
-* This repository contains a custom container that installs enscript and ghostscript to easily print source code
-* Students can run ```make -f Makefile_linux printAll``` to print the code to bin/src.pdf. 
-* Students can then Right Click on src.pdf and download the PDF locally
 
 ## Notes
 * [View pointer as array in debugger](https://github.com/microsoft/vscode-cpptools/issues/172#issuecomment-1281804128)
